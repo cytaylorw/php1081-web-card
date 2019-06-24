@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/c.css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div>關卡：<input type="number" name="lvl" id="lvl" min="1" max="51" step="1" value="1"></div>
+        <div>分數：<span id="score"></span></div>
+        <div>剩餘時間：<span id="time"></span></div>
+        <div>關卡時間(秒)：<input type="number" name="gtime" id="gtime" min="10" max="600" step="10" value="60"></div>
+        <div id="btn">
+            <button id="start">開始遊戲</button>
+            <button id="see" disabled>
+                <i class="fas fa-eye"></i>
+            </button>
+        </div>
+        <div class="record">歷史紀錄
+            <aside>
+                <h3>最新10筆紀錄</h3>
+                <ol id="record"></ol>
+            </aside>
+        </div>
+    </nav>
+    <div class="main"></div>
+    <script src="./js/card.js"></script>
+</body>
+</html>

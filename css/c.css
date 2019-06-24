@@ -1,0 +1,177 @@
+@charset "UTF-8";
+@import url("all.css");
+
+* {
+    font-family: Arial, Helvetica, sans-serif, 微軟正黑體;
+    margin: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/background.jpg");
+    background-size: cover;
+    /* background-position: center; */
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    float: left;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.front {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    /* opacity: 0.1; */
+}
+
+.back {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: 100% 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: rotateY(180deg);
+    opacity: 0.9;
+}
+
+.open {
+    transform: rotateY(180deg);
+}
+
+.main {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+nav div:not(:last-child) {
+    display: inline-block;
+    margin: 0;
+    width: calc(100vw / 5 - 40px);
+    height: 30px;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
+nav #btn {
+    padding: 0;
+}
+
+nav #btn input,
+nav #btn button {
+    height: 100%;
+    margin:0;
+}
+
+nav div input[type="number"],
+nav div button {
+    border: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    color: white;
+}
+
+
+nav div input[type="number"]:disabled,
+nav div button:disabled{
+    color: black;
+}
+
+#start {
+    animation: jelly 0.5s infinite;
+}
+
+@keyframes jelly {
+    0%,
+    100% {
+      transform: scale(1, 1);
+    }
+    25% {
+      transform: scale(0.9, 1.1);
+    }
+    50% {
+      transform: scale(1.1, 0.9);
+    }
+    75% {
+      transform: scale(0.95, 1.05);
+    }
+  }
+
+#start:disabled {
+    animation: none;
+}
+
+#see {
+    font-size: 15px;
+}
+
+#see i.fa-eye{
+    animation: spin 1.5s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotateY(540deg);
+    }
+}
+
+#see:disabled i{
+    animation: none;
+}
+
+aside {
+    height: calc(100vh - 37px);
+    width: 250px;
+    position: fixed;
+    top: 37px;
+    left: calc(100vw - 250px);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+aside h3{
+    text-align: center;
+    margin: 10px;
+}
+
+.record {
+    float: right;
+    height: 30px;
+    padding: 7px 10px 0 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.record aside {
+    display: none;
+}
+
+.record:hover aside {
+    display: block;
+}
+
+#record li {
+    padding-top: 10px;
+}
