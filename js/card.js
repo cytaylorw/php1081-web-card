@@ -23,7 +23,6 @@
                 newCard(result.lvl);
                 $(this).attr("disabled",true);
                 $("#gtime, #lvl").attr("disabled",true);
-                // $("#lvl").attr("disabled",true);
                 $("#see").attr("disabled",false);
             });
 
